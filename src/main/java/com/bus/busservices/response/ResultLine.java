@@ -1,24 +1,26 @@
 package com.bus.busservices.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import lombok.*;
 
 @Getter
 @Setter
 @ToString
-public class ResultLine{
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class ResultLine extends Result{
     @JsonProperty("LineNumber")
-    public String lineNumber;
+    private String lineNumber;
     @JsonProperty("LineDesignation")
-    public String lineDesignation;
+    private String lineDesignation;
     @JsonProperty("DefaultTransportMode")
-    public String defaultTransportMode;
+    private String defaultTransportMode;
     @JsonProperty("DefaultTransportModeCode")
-    public String defaultTransportModeCode;
+    private String defaultTransportModeCode;
     @JsonProperty("LastModifiedUtcDateTime")
-    public String lastModifiedUtcDateTime;
+    private String lastModifiedUtcDateTime;
     @JsonProperty("ExistsFromDate")
-    public String existsFromDate;
+    private String existsFromDate;
 }

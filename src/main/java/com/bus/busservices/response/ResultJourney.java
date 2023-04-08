@@ -1,22 +1,23 @@
 package com.bus.busservices.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @ToString
-public class ResultJourney {
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class ResultJourney extends Result{
     @JsonProperty("LineNumber")
-    public String lineNumber;
+    private String lineNumber;
     @JsonProperty("DirectionCode")
-    public String directionCode;
+    private String directionCode;
     @JsonProperty("JourneyPatternPointNumber")
-    public String journeyPatternPointNumber;
+    private String journeyPatternPointNumber;
     @JsonProperty("LastModifiedUtcDateTime")
-    public String lastModifiedUtcDateTime;
+    private String lastModifiedUtcDateTime;
     @JsonProperty("ExistsFromDate")
-    public String existsFromDate;
+    private String existsFromDate;
 }

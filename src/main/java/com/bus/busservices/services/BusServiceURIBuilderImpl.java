@@ -43,6 +43,6 @@ public class BusServiceURIBuilderImpl implements BusServiceURIBuilder {
 
     @Override
     public UriComponents buildUri(String baseUrl, String key, String busMode) {
-       return null;
+        return null;
     }
 }

@@ -1,5 +1,6 @@
 package com.bus.busservices.controller;
 
+import com.bus.busservices.response.BusResponse;
 import com.bus.busservices.response.TrafikLabResponse;
 import com.bus.busservices.services.BusService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 100000L)
@@ -36,7 +38,7 @@ public class BusController {
             @ApiResponse(responseCode = "404", description = "Bus Service details not found", content = @Content)
     })
     @GetMapping("/bus/services")
-    public ResponseEntity<String> busServiceDetails(){
-        return new ResponseEntity<String>(busService.getBusService(), HttpStatus.OK);
+    public ResponseEntity<List<BusResponse>> busServiceDetails(){
+        return new ResponseEntity<List<BusResponse>>(busService.getBusService(), HttpStatus.OK);
     }
 }
