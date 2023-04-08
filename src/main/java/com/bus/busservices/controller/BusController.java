@@ -30,12 +30,12 @@ public class BusController {
         return new ResponseEntity<TrafikLabResponse>(busService.getBusService(modelType), HttpStatus.OK);
     }
 
-    @GetMapping("/bus/services")
     @Operation(summary = "This is to get Bus Service details")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Bus Service details found", content = {@Content(mediaType = "application/json")}),
             @ApiResponse(responseCode = "404", description = "Bus Service details not found", content = @Content)
     })
+    @GetMapping("/bus/services")
     public ResponseEntity<String> busServiceDetails(){
         return new ResponseEntity<String>(busService.getBusService(), HttpStatus.OK);
     }
